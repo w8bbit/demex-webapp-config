@@ -1,0 +1,20 @@
+{
+    "network": "mainnet",
+    "featured_markets": [
+        {
+            "name": "ETHUSDC_PERP"
+        },
+        {
+            "name": "WBTCUSDC_PERP"
+        },
+        {
+            "name": "busd1_usdc1"
+        },
+        {
+            "name": "zwap.1.18.393529_swth"
+        },
+        {
+            "name": "lkt1_usdc1"
+        }
+    ]
+}
