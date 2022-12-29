@@ -3,6 +3,8 @@
     "featured_markets": [
         "BTC_PERP.USDC",
         "cmkt/4",
-        "swth_eth"
+        "swth_eth",
+        "wrong_market",
+        "swth_nexo"
     ]
 }
