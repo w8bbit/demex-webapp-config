@@ -1,4 +1,4 @@
-# Feature Market
+# Demex Config
 
 Each json file under the [configs](../../configs) folder correspond to their respective networks. For example, [configs/mainnet.json](../../configs/mainnet.json) contains metadata pertaining to Carbon `mainnet` network.
 
