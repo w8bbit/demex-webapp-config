@@ -6,5 +6,8 @@
         "swth_eth",
         "wrong_market",
         "swth_nexo"
-    ]
+    ],
+    "blacklisted_markets": [],
+    "blacklisted_pools": [],
+    "blacklisted_tokens": []
 }
