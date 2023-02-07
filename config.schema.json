@@ -86,7 +86,7 @@
                 "amount": {
                     "type": "string",
                     "description": "total supply of each IBC token on Coingecko",
-                    "pattern": "^\\d+$"
+                    "pattern": "^\\d+.\\d+$"
                 }
             }
         }
