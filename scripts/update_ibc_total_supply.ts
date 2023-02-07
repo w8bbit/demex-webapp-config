@@ -1,5 +1,5 @@
 // import { BigNumber } from "bignumber.js";
-import { CarbonSDK, Models, TypeUtils } from "carbon-js-sdk";
+import { CarbonSDK, Models, NumberUtils } from "carbon-js-sdk";
 import * as fs from "fs";
 import Long from "long";
 const nodeFetch = require("node-fetch");
@@ -55,9 +55,10 @@ const skipTotalSupply: string[] = [
       const coingeckoId = sdk.token.geckoTokenNames[allIBCTokens[ii].denom];
       if (skipTotalSupply.includes(allIBCTokens[ii].denom) || !coingeckoId) continue;
   
+      const tokenDecimals = sdk.token.getDecimals(allIBCTokens[ii].denom) ?? 0;
       const tokenResponse = await nodeFetch(`https://api.coingecko.com/api/v3/coins/${coingeckoId}`);
       const tokenData = await tokenResponse.json();
-      const circulatingSupply = (tokenData?.market_data?.circulating_supply ?? 0).toString(10);
+      const circulatingSupply = NumberUtils.bnOrZero(tokenData?.market_data?.circulating_supply ?? 0).shiftedBy(tokenDecimals).toString(10);
       totalSupplyMap.push({
         denom: allIBCTokens[ii].denom,
         amount: circulatingSupply,
