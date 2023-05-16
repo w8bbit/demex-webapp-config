@@ -6,9 +6,11 @@
   "author": "Switcheo <engineering@switcheo.network>",
   "license": "MIT",
   "scripts": {
+    "preinstall": "yarn config set ignore-engines true",
     "validate": "pajv validate -s config.schema.json -d \"configs/*.json\" --verbose",
     "check-configs": "ts-node scripts/check_configs",
-    "update-total-supply": "ts-node scripts/update_ibc_total_supply"
+    "update-total-supply": "ts-node scripts/update_ibc_total_supply",
+    "upgrade-sdk": "yarn upgrade carbon-js-sdk@latest"
   },
   "dependencies": {
     "@cosmjs/tendermint-rpc": "^0.29.4",
