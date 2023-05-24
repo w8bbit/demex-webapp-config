@@ -8,6 +8,8 @@
     "blacklisted_markets": [
         "swth_btc2",
         "cmkt/11",
+        "cmkt/12",
+        "cmkt/17",
         "cmkt/28"
     ],
     "blacklisted_pools": [],
