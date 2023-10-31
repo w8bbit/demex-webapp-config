@@ -12,5 +12,7 @@
     "usdc": 1,
     "eth": 2
   },
-  "maintenance": {}
+  "maintenance": {
+    "message": "Chain upgrade in progress"
+  }
 } 
