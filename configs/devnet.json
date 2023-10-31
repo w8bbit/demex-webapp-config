@@ -1,12 +1,15 @@
 {
-    "network": "devnet",
-    "featured_markets": [
-        "BTC_PERP.USDC",
-        "swth_eth",
-        "swth_nexo",
-        "swth_nexo"
-    ],
-    "blacklisted_markets": [],
-    "blacklisted_pools": [],
-    "blacklisted_tokens": []
-}
+  "network": "devnet",
+  "featured_markets": [],
+  "blacklisted_markets": [
+    "swth_btc2"
+  ],
+  "blacklisted_pools": [],
+  "blacklisted_tokens": [],
+  "transfer_options": {},
+  "network_fees": {
+    "swth": 0,
+    "usdc": 1,
+    "eth": 2
+  }
+} 
