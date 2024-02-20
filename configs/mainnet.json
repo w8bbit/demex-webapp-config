@@ -5,14 +5,11 @@
     "cmkt/115",
     "cmkt/117",
     "cmkt/118",
-    "cmkt/129",
-    "cmkt/142",
     "cmkt/147",
     "cmkt/155",
     "cmkt/159",
-    "cmkt/165",
     "cmkt/166",
-    "cmkt/167"
+    "cmkt/168"
   ],
   "prelaunch_markets": [
     "cmkt/160"
@@ -103,10 +100,10 @@
     },
     {
       "perp_pool_id": "6",
-      "show_from": "2024-02-20T06:30+00:00",
-      "show_until": "2024-02-21T09:00+00:00",
+      "show_from": "2024-02-20T09:10+00:00",
+      "show_until": "2024-02-20T14:00+00:00",
       "title": "Changes to Perp Pool",
-      "subtext": "OP-PERP will be added on 20 Feb, 09:00AM UTC. STRK-PERP will be added on 20 Feb, 02:00PM UTC."
+      "subtext": "STRK-PERP will be added on 20 Feb, 02:00PM UTC."
     }
   ]
 }
