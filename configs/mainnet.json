@@ -100,6 +100,12 @@
       "show_until": "2024-02-22T07:30+00:00",
       "title": "Changes to Perp Pool",
       "subtext": "RNDR-PERP will be added on 22nd Feb, 08:00AM UTC"
+    },
+    {
+      "perp_pool_id": "6",
+      "show_until": "2024-02-20T07:50+00:00",
+      "title": "Changes to Perp Pool",
+      "subtext": "OP-PERP will be added on 20 Feb, 08:00AM UTC. STRK-PERP will be added on 21 Feb, 04:00AM UTC."
     }
   ]
 }
