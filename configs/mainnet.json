@@ -128,7 +128,7 @@
     "cmkt/164": "COINBASE:SEIUSD",
     "cmkt/159": "KRAKEN:JUPUSD"
   },
-  "perp_market_pie_chart_colors": {
+  "perp_pool_pie_chart_colors": {
     "cmkt/118": "#0772FF",
     "cmkt/117": "#482BFF",
     "cmkt/159": "#c0e87f",
