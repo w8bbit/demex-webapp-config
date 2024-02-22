@@ -13,8 +13,7 @@
     "cmkt/168",
     "cmkt/169"
   ],
-  "prelaunch_markets": [
-  ],
+  "prelaunch_markets": [],
   "blacklisted_markets": [
     "gm1_busd1",
     "SWTH_UST",
@@ -106,5 +105,41 @@
       "title": "Changes to Perp Pool",
       "subtext": "STRK-PERP will be added on 20 Feb, 02:00PM UTC."
     }
-  ]
+  ],
+  "spot_history_market_list": {
+    "cmkt/117": "BINANCE:ETHUSD",
+    "cmkt/118": "BINANCE:BTCUSD",
+    "cmkt/155": "BINANCE:TIAUSD",
+    "cmkt/165": "BINANCE:MANTAUSD",
+    "cmkt/158": "KRAKEN:PYTHUSD",
+    "cmkt/121": "BINANCE:OSMOUSD",
+    "cmkt/161": "CRYPTO:SCRTUSD",
+    "cmkt/147": "BINANCE:SOLUSD",
+    "cmkt/120": "BINANCE:ATOMUSD",
+    "cmkt/119": "COINBASE:BLURUSD",
+    "cmkt/126": "BINANCE:NEOUSD",
+    "cmkt/129": "COINBASE:ARBUSD",
+    "cmkt/141": "BINANCE:ZILUSD",
+    "cmkt/142": "CRYPTO:MNTUSD",
+    "cmkt/149": "CRYPTO:TONUSD",
+    "cmkt/156": "PYTH:MEMEUSD",
+    "cmkt/160": "CRYPTO:STRKUSD",
+    "cmkt/163": "BINANCE:STXUSD",
+    "cmkt/164": "COINBASE:SEIUSD",
+    "cmkt/159": "KRAKEN:JUPUSD"
+  },
+  "perp_pool_pie_chart_colors": {
+    "cmkt/118": "#0772FF",
+    "cmkt/117": "#482BFF",
+    "cmkt/159": "#c0e87f",
+    "cmkt/147": "#da77f6",
+    "cmkt/158": "#e7dbfe",
+    "cmkt/155": "#bf48e8",
+    "cmkt/161": "#161b21",
+    "cmkt/166": "#312d2d",
+    "cmkt/142": "#60b1a9",
+    "cmkt/129": "#10a5f6",
+    "cmkt/165": "#e36bbf",
+    "Unused": "#fbfafb"
+  }
 }
