@@ -127,5 +127,19 @@
     "cmkt/163": "BINANCE:STXUSD",
     "cmkt/164": "COINBASE:SEIUSD",
     "cmkt/159": "KRAKEN:JUPUSD"
+  },
+  "perp_market_pie_chart_colors": {
+    "cmkt/118": "#0772FF",
+    "cmkt/117": "#482BFF",
+    "cmkt/159": "#c0e87f",
+    "cmkt/147": "#da77f6",
+    "cmkt/158": "#e7dbfe",
+    "cmkt/155": "#bf48e8",
+    "cmkt/161": "#161b21",
+    "cmkt/166": "#312d2d",
+    "cmkt/142": "#60b1a9",
+    "cmkt/129": "#10a5f6",
+    "cmkt/165": "#e36bbf",
+    "Unused": "#fbfafb"
   }
 }
