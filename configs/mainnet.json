@@ -7,11 +7,11 @@
     "cmkt/118",
     "cmkt/147",
     "cmkt/155",
-    "cmkt/159",
     "cmkt/166",
     "cmkt/169",
     "cmkt/174",
-    "cmkt/175"
+    "cmkt/175",
+    "cmkt/176"
   ],
   "prelaunch_markets": [],
   "blacklisted_markets": [
@@ -133,7 +133,8 @@
     "cmkt/169": "BINANCE:RNDRUSD",
     "cmkt/166": "BINANCE:DYMUSD",
     "cmkt/174": "BINANCE:WLDUSD",
-    "cmkt/175": "CRYPTO:PEPEUSD"
+    "cmkt/175": "CRYPTO:PEPEUSD",
+    "cmkt/176": "BINANCE:DOGEUSD"
   },
   "perp_pool_pie_chart_colors": {
     "cmkt/118": "#0772FF",
