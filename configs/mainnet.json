@@ -8,11 +8,11 @@
     "cmkt/147",
     "cmkt/155",
     "cmkt/166",
-    "cmkt/169",
     "cmkt/174",
     "cmkt/175",
     "cmkt/176",
-    "cmkt/177"
+    "cmkt/177",
+    "cmkt/178"
   ],
   "prelaunch_markets": [],
   "blacklisted_markets": [
@@ -135,23 +135,31 @@
     "cmkt/166": "BINANCE:DYMUSD",
     "cmkt/174": "BINANCE:WLDUSD",
     "cmkt/175": "CRYPTO:PEPEUSD",
-    "cmkt/176": "BINANCE:DOGEUSD"
+    "cmkt/176": "BINANCE:DOGEUSD",
+    "cmkt/178": "BINANCE:AXLUSD"
   },
   "perp_pool_pie_chart_colors": {
-    "cmkt/118": "#0772FF",
     "cmkt/117": "#482BFF",
-    "cmkt/159": "#c0e87f",
-    "cmkt/147": "#da77f6",
-    "cmkt/158": "#e7dbfe",
-    "cmkt/155": "#bf48e8",
-    "cmkt/161": "#161b21",
-    "cmkt/166": "#312d2d",
-    "cmkt/142": "#60b1a9",
+    "cmkt/118": "#0772FF",
+    "cmkt/120": "#34395E",
+    "cmkt/121": "#5E12A0",
     "cmkt/129": "#10a5f6",
+    "cmkt/142": "#60b1a9",
+    "cmkt/147": "#da77f6",
+    "cmkt/155": "#bf48e8",
+    "cmkt/158": "#e7dbfe",
+    "cmkt/159": "#c0e87f",
+    "cmkt/160": "#2825A4",
+    "cmkt/161": "#18005E",
+    "cmkt/164": "#C1121F",
     "cmkt/165": "#e36bbf",
+    "cmkt/166": "#312d2d",
+    "cmkt/167": "#E8B12B",
+    "cmkt/168": "#C53B4A",
     "cmkt/174": "#007AFF",
     "cmkt/175": "#00A862",
     "cmkt/176": "#C0993A",
-    "Unused": "#fbfafb"
+    "cmkt/178": "#007AFF",
+    "Unused": "#7798E4"
   }
 }
