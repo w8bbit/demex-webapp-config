@@ -114,6 +114,12 @@
           "title": {
             "$ref": "#/$defs/title"
           },
+          "removed_markets": {
+            "$ref": "#/$defs/removed_markets"
+          },
+          "added_markets": {
+            "$ref": "#/$defs/added_markets"
+          },
           "subtext": {
             "$ref": "#/$defs/subtext"
           }
@@ -161,6 +167,14 @@
     "title": {
       "type": "string",
       "description": "The title shown on the banner"
+    },
+    "removed_markets": {
+      "type": "string",
+      "description": "The message shown on the banner describing markets being removed"
+    },
+    "added_markets": {
+      "type": "string",
+      "description": "The message shown on the banner describing markets being added"
     },
     "subtext": {
       "type": "string",
