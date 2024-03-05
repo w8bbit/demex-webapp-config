@@ -97,14 +97,14 @@
       "perp_pool_id": "5",
       "show_until": "2024-02-22T07:30+00:00",
       "title": "Changes to Perp Pool",
-      "subtext": "RNDR-PERP will be added on 22nd Feb, 08:00AM UTC"
+      "added_markets": "RNDR-PERP will be added on 22nd Feb, 08:00AM UTC"
     },
     {
       "perp_pool_id": "6",
       "show_from": "2024-02-20T09:10+00:00",
       "show_until": "2024-02-20T14:00+00:00",
       "title": "Changes to Perp Pool",
-      "subtext": "STRK-PERP will be added on 20 Feb, 02:00PM UTC."
+      "added_markets": "STRK-PERP will be added on 20 Feb, 02:00PM UTC."
     }
   ],
   "spot_history_market_list": {
