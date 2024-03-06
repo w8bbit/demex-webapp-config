@@ -136,6 +136,7 @@
     "cmkt/174": "BINANCE:WLDUSD",
     "cmkt/175": "CRYPTO:PEPEUSD",
     "cmkt/176": "BINANCE:DOGEUSD",
+    "cmkt/177": "KRAKEN:WIFUSD",
     "cmkt/178": "BINANCE:AXLUSD"
   },
   "perp_pool_pie_chart_colors": {
