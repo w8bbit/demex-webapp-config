@@ -93,13 +93,12 @@
     },
     "perp_pool_banners": {
       "type": "array",
-      "description": "List of blacklisted token denoms",
+      "description": "List of perp pool banners",
       "items": {
         "type": "object",
         "required": [
           "perp_pool_id",
-          "title",
-          "subtext"
+          "title"
         ],  
         "properties": {
           "perp_pool_id": {
