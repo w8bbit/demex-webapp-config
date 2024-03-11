@@ -26,7 +26,7 @@
       "subtext": "BTCETH Perp will be removed on 6 Mar, 09:00AM UTC"
     }
   ],
-  "marketOverride": {
+  "markets_override": {
     "cmkt/13": {
       "base": {
         "symbol": "1000PEPE"
