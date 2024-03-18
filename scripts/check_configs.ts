@@ -34,10 +34,12 @@ interface DuplicateEntry {
 
 interface PerpPoolBanner {
   perp_pool_id: string;
-  show_from: string;
-  show_until: string;
+  show_from?: string;
+  show_until?: string;
   title: string;
-  subtext: string;
+  removed_markets?: string;
+  added_markets?: string;
+  subtext?: string;
 }
 
 type OutcomeMap = { [key in CarbonSDK.Network]: boolean }; // true = success, false = failure

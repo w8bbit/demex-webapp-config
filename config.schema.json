@@ -93,13 +93,12 @@
     },
     "perp_pool_banners": {
       "type": "array",
-      "description": "List of blacklisted token denoms",
+      "description": "List of perp pool banners",
       "items": {
         "type": "object",
         "required": [
           "perp_pool_id",
-          "title",
-          "subtext"
+          "title"
         ],  
         "properties": {
           "perp_pool_id": {
@@ -113,6 +112,12 @@
           },
           "title": {
             "$ref": "#/$defs/title"
+          },
+          "removed_markets": {
+            "$ref": "#/$defs/removed_markets"
+          },
+          "added_markets": {
+            "$ref": "#/$defs/added_markets"
           },
           "subtext": {
             "$ref": "#/$defs/subtext"
@@ -161,6 +166,14 @@
     "title": {
       "type": "string",
       "description": "The title shown on the banner"
+    },
+    "removed_markets": {
+      "type": "string",
+      "description": "The message shown on the banner describing markets being removed"
+    },
+    "added_markets": {
+      "type": "string",
+      "description": "The message shown on the banner describing markets being added"
     },
     "subtext": {
       "type": "string",
