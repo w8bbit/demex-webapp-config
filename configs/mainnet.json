@@ -95,7 +95,7 @@
       "perp_pool_id": "6",
       "show_until": "2024-04-05T08:00+00:00",
       "title": "Changes to Perp Pool",
-      "added_markets": "BNB Perp Market will be removed from this Perp Pool and added to the Layer 1 Perp Pool on 4 Apr, 08:00 AM UTC."
+      "removed_markets": "BNB Perp Market will be removed from this Perp Pool and added to the Layer 1 Perp Pool on 4 Apr, 08:00 AM UTC."
     }
   ],
   "spot_history_market_list": {
