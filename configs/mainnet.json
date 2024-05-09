@@ -137,7 +137,7 @@
   },
   "perp_pool_pie_chart_colors": {
     "cmkt/117": "#482BFF",
-    "cmkt/118": "#0772FF",
+    "cmkt/118": "#f6921a",
     "cmkt/120": "#34395E",
     "cmkt/121": "#5E12A0",
     "cmkt/129": "#10a5f6",
@@ -164,6 +164,14 @@
     "cmkt/190": "#fd8f00",
     "cmkt/191": "#1869fe",
     "cmkt/149": "#0099e8",
+    "cmkt/194": "#1c1c1c",
+    "cmkt/163": "#fc5414",
+    "cmkt/126": "#00e599",
+    "cmkt/141": "#4ac0bf",
+    "cmkt/192": "#a26efc",
+    "cmkt/119": "#d7541a",
+    "cmkt/156": "#e6a20e",
+    "cmkt/169": "#d11c1f",
     "Unused": "#7798E4"
   },
  "markets_override": {
