@@ -176,11 +176,23 @@
     "cmkt/199": "#152f50",
     "Unused": "#7798E4"
   },
- "markets_override": {
+  "markets_override": {
     "cmkt/181": {
       "base": {
         "symbol": "1000PEPE"
       }
+    }
+  },
+  "demex_points_config": {
+    "depositsPerSpin": 1000,
+    "tradingVolumePerSpin": 10000
+  },
+  "perp_pool_promo": {
+    "9": {
+      "start": "2024-05-14T06:00:00Z",
+      "end": "2024-05-21T08:00:00Z",
+      "perpPoolDepositBoost": "2",
+      "perpTradingBoost": "3"
     }
   }
 }
