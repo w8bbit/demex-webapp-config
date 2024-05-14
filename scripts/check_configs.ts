@@ -17,7 +17,11 @@ interface ConfigJSON {
   network_fees: {
     [denom: string]: number
   },
-  perp_pool_banners: PerpPoolBanner[]
+  perp_pool_banners: PerpPoolBanner[],
+  demex_points_config: DemexPointsConfig,
+  perp_pool_promo: {
+    [perpPoolId: string]: PerpPoolPromo,
+  }
 }
 
 interface InvalidEntry {
@@ -39,6 +43,18 @@ interface PerpPoolBanner {
   removed_markets?: string;
   added_markets?: string;
   subtext?: string;
+}
+
+interface DemexPointsConfig {
+  depositsPerSpin: number;
+  tradingVolumePerSpin: number;
+}
+
+interface PerpPoolPromo {
+  start: string;
+  end: string;
+  perpPoolDepositBoost: string;
+  perpTradingBoost: string;
 }
 
 type OutcomeMap = { [key in CarbonSDK.Network]: boolean }; // true = success, false = failure
@@ -290,19 +306,60 @@ async function main() {
       const perpPoolIds = perpPoolsQuery.pools.map((pool) => pool.poolId.toString())
       const perpPoolBannerIds = Object.values(jsonData.perp_pool_banners).map((banner) => banner.perp_pool_id)
 
-      const hasInvalidPerpPoolIds = checkValidEntries(perpPoolBannerIds, perpPoolIds)
-      const hasDuplicatePerpPoolIds = checkDuplicateEntries(perpPoolBannerIds)
+      const hasInvalidPerpPoolBannerIds = checkValidEntries(perpPoolBannerIds, perpPoolIds)
+      const hasDuplicatePerpPoolBannerIds = checkDuplicateEntries(perpPoolBannerIds)
 
-      if(hasInvalidPerpPoolIds.status && hasInvalidPerpPoolIds.entry) {
-        let listOfInvalidIds: string = hasInvalidPerpPoolIds.entry.join(", ");
+      if (hasInvalidPerpPoolBannerIds.status && hasInvalidPerpPoolBannerIds.entry) {
+        let listOfInvalidIds: string = hasInvalidPerpPoolBannerIds.entry.join(", ");
         console.error(`ERROR: ${network}.json has the following invalid perp pool ids under the perp_pool_banners field: ${listOfInvalidIds}`)
         outcomeMap[network] = false;
       }
 
-      if (hasDuplicatePerpPoolIds.status && hasDuplicatePerpPoolIds.entry) {
-        let listOfDuplicates: string = hasDuplicatePerpPoolIds.entry.join(", ");
+      if (hasDuplicatePerpPoolBannerIds.status && hasDuplicatePerpPoolBannerIds.entry) {
+        let listOfDuplicates: string = hasDuplicatePerpPoolBannerIds.entry.join(", ");
         console.error(`ERROR: ${network}.json has duplicated perp pool banners for the following perp pool ids: ${listOfDuplicates}. Please make sure to input each perp pool banner only once in ${network}`);
         outcomeMap[network] = false;
+      }
+
+      const perpPoolPromoIds = Object.keys(jsonData.perp_pool_promo)
+      const hasInvalidPerpPoolPromoIds = checkValidEntries(perpPoolPromoIds, perpPoolIds)
+      const hasDuplicatePerpPoolPromoIds = checkDuplicateEntries(perpPoolPromoIds)
+
+      if (hasInvalidPerpPoolPromoIds.status && hasInvalidPerpPoolPromoIds.entry) {
+        let listOfInvalidIds: string = hasInvalidPerpPoolPromoIds.entry.join(", ");
+        console.error(`ERROR: ${network}.json has the following invalid perp pool ids under the perp_pool_promo field: ${listOfInvalidIds}`)
+        outcomeMap[network] = false;
+      }
+
+      if (hasDuplicatePerpPoolPromoIds.status && hasDuplicatePerpPoolPromoIds.entry) {
+        let listOfDuplicates: string = hasDuplicatePerpPoolPromoIds.entry.join(", ");
+        console.error(`ERROR: ${network}.json has duplicated perp pool promos for the following perp pool ids: ${listOfDuplicates}. Please make sure to input each perp pool promo only once in ${network}`);
+        outcomeMap[network] = false;
+      }
+
+      if (network === CarbonSDK.Network.MainNet && !jsonData.demex_points_config) {
+        console.error(`ERROR: ${network}.json is missing demex_points_config`)
+        outcomeMap[network] = false;
+      }
+
+      if (jsonData.perp_pool_promo) {
+        const perpPoolPromo = jsonData.perp_pool_promo
+        for (const promoId in jsonData.perp_pool_promo) {
+          const promoInfo = perpPoolPromo[promoId];
+          const startTimeStr = promoInfo.start;
+          const endTimeStr = promoInfo.end;
+
+          // Parse start and end times into Date objects
+          const startTime = new Date(startTimeStr);
+          const endTime = new Date(endTimeStr);
+
+          // Check if end time is before start time
+          if (endTime < startTime) {
+            console.error(`ERROR: ${network}.json has invalid end time (${endTimeStr}) is before start time (${startTimeStr}) for perp_pool_promo id ${promoId}.`);
+            outcomeMap[network] = false;
+            break; // Exit the loop early upon encountering an error
+          }
+        }
       }
     }
   }
