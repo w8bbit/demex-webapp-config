@@ -219,14 +219,12 @@
       "pattern": "^\\d{4}(-\\d\\d(-\\d\\d(T\\d\\d:\\d\\d(:\\d\\d)?(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?)?)?)?$"
     },
     "perpPoolDepositBoost": {
-      "type": "string",
-      "description": "The spin boost multiplier for deposits in perp pool",
-      "pattern": "^\\d+$"
+      "type": "integer",
+      "description": "The spin boost multiplier for deposits in perp pool"
     },
     "perpTradingBoost": {
-      "type": "string",
-      "description": "The spin boost multiplier for boosted perp markets trading volume",
-      "pattern": "^\\d+$"
+      "type": "integer",
+      "description": "The spin boost multiplier for boosted perp markets trading volume"
     }
   }
 }
