@@ -156,7 +156,7 @@ async function main() {
           reverse: false,
         },
       });
-      const markets: string[] = allMarkets.markets.map(market => market.name);
+      const markets: string[] = allMarkets.markets.map(market => market.id);
 
       // look for invalid market entries
       const hasInvalidPrelaunchMarkets = checkValidEntries(jsonData.prelaunch_markets, markets);
