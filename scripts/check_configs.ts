@@ -321,21 +321,10 @@ async function main() {
         outcomeMap[network] = false;
       }
 
-      const perpPoolPromoIds = Object.keys(jsonData.perp_pool_promo)
-      const hasInvalidPerpPoolPromoIds = checkValidEntries(perpPoolPromoIds, perpPoolIds)
-      const hasDuplicatePerpPoolPromoIds = checkDuplicateEntries(perpPoolPromoIds)
+      if (jsonData.perp_pool_promo) {
 
-      if (hasInvalidPerpPoolPromoIds.status && hasInvalidPerpPoolPromoIds.entry) {
-        let listOfInvalidIds: string = hasInvalidPerpPoolPromoIds.entry.join(", ");
-        console.error(`ERROR: ${network}.json has the following invalid perp pool ids under the perp_pool_promo field: ${listOfInvalidIds}`)
-        outcomeMap[network] = false;
       }
 
-      if (hasDuplicatePerpPoolPromoIds.status && hasDuplicatePerpPoolPromoIds.entry) {
-        let listOfDuplicates: string = hasDuplicatePerpPoolPromoIds.entry.join(", ");
-        console.error(`ERROR: ${network}.json has duplicated perp pool promos for the following perp pool ids: ${listOfDuplicates}. Please make sure to input each perp pool promo only once in ${network}`);
-        outcomeMap[network] = false;
-      }
 
       if (network === CarbonSDK.Network.MainNet && !jsonData.demex_points_config) {
         console.error(`ERROR: ${network}.json is missing demex_points_config`)
@@ -344,7 +333,26 @@ async function main() {
 
       if (jsonData.perp_pool_promo) {
         const perpPoolPromo = jsonData.perp_pool_promo
-        for (const promoId in jsonData.perp_pool_promo) {
+
+        const perpPoolPromoIds = Object.keys(perpPoolPromo)
+        const hasInvalidPerpPoolPromoIds = checkValidEntries(perpPoolPromoIds, perpPoolIds)
+        const hasDuplicatePerpPoolPromoIds = checkDuplicateEntries(perpPoolPromoIds)
+
+        // check for valid perp pool id
+        if (hasInvalidPerpPoolPromoIds.status && hasInvalidPerpPoolPromoIds.entry) {
+          let listOfInvalidIds: string = hasInvalidPerpPoolPromoIds.entry.join(", ");
+          console.error(`ERROR: ${network}.json has the following invalid perp pool ids under the perp_pool_promo field: ${listOfInvalidIds}`)
+          outcomeMap[network] = false;
+        }
+
+        // check for duplicated perp pool id
+        if (hasDuplicatePerpPoolPromoIds.status && hasDuplicatePerpPoolPromoIds.entry) {
+          let listOfDuplicates: string = hasDuplicatePerpPoolPromoIds.entry.join(", ");
+          console.error(`ERROR: ${network}.json has duplicated perp pool promos for the following perp pool ids: ${listOfDuplicates}. Please make sure to input each perp pool promo only once in ${network}`);
+          outcomeMap[network] = false;
+        }
+
+        for (const promoId in perpPoolPromo) {
           const promoInfo = perpPoolPromo[promoId];
           const startTimeStr = promoInfo.start;
           const endTimeStr = promoInfo.end;
