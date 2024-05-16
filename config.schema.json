@@ -91,7 +91,7 @@
         "required": [
           "perp_pool_id",
           "title"
-        ],  
+        ],
         "properties": {
           "perp_pool_id": {
             "$ref": "#/$defs/perp_pool_id"
@@ -113,6 +113,47 @@
           },
           "subtext": {
             "$ref": "#/$defs/subtext"
+          }
+        }
+      }
+    },
+    "demex_points_config": {
+      "type": "object",
+      "description": "Config for demex points",
+      "properties": {
+        "depositsPerSpin": {
+          "type": "integer"
+        },
+        "tradingVolumePerSpin": {
+          "type": "integer"
+        }
+      }
+    },
+    "perp_pool_promo": {
+      "type": "object",
+      "description": "Perp Pool Promo config",
+      "patternProperties": {
+        "^\\d+$": {
+          "type": "object",
+          "required": [
+            "start",
+            "end",
+            "perpPoolDepositBoost",
+            "perpTradingBoost"
+          ],
+          "properties": {
+            "start": {
+              "$ref": "#/$defs/start"
+            },
+            "end": {
+              "$ref": "#/$defs/end"
+            },
+            "perpPoolDepositBoost": {
+              "$ref": "#/$defs/perpPoolDepositBoost"
+            },
+            "perpTradingBoost": {
+              "$ref": "#/$defs/perpTradingBoost"
+            }
           }
         }
       }
@@ -166,6 +207,24 @@
     "subtext": {
       "type": "string",
       "description": "The subtext shown on the banner"
+    },
+    "start": {
+      "type": "string",
+      "description": "The start time of perp pool promo",
+      "pattern": "^\\d{4}(-\\d\\d(-\\d\\d(T\\d\\d:\\d\\d(:\\d\\d)?(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?)?)?)?$"
+    },
+    "end": {
+      "type": "string",
+      "description": "The end time of perp pool promo",
+      "pattern": "^\\d{4}(-\\d\\d(-\\d\\d(T\\d\\d:\\d\\d(:\\d\\d)?(\\.\\d+)?(([+-]\\d\\d:\\d\\d)|Z)?)?)?)?$"
+    },
+    "perpPoolDepositBoost": {
+      "type": "integer",
+      "description": "The spin boost multiplier for deposits in perp pool"
+    },
+    "perpTradingBoost": {
+      "type": "integer",
+      "description": "The spin boost multiplier for boosted perp markets trading volume"
     }
   }
 }
